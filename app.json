@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "Hyacine Admin",
+    "slug": "hyacine-admin-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "hyacine-admin",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "experiments": {
+      "typedRoutes": true
+    },
+    "plugins": ["expo-router", "expo-secure-store"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hyacine.admin"
+    },
+    "android": {
+      "package": "com.hyacine.admin",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#1a1a2e"
+      }
+    }
+  }
+}
