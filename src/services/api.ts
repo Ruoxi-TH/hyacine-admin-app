@@ -105,3 +105,37 @@ export async function getStats(
 }> {
   return request(backendUrl, "/admin/stats", token);
 }
+
+export async function getConfig(
+  backendUrl: string,
+  token: string
+): Promise<{
+  smtp: {
+    host: string;
+    port: number;
+    user: string;
+    from: string;
+    has_password: boolean;
+  };
+}> {
+  return request(backendUrl, "/admin/config", token);
+}
+
+export async function updateConfig(
+  backendUrl: string,
+  token: string,
+  config: {
+    smtp: {
+      host: string;
+      port: number;
+      user: string;
+      password?: string;
+      from: string;
+    };
+  }
+): Promise<{ message: string }> {
+  return request(backendUrl, "/admin/config/update", token, {
+    method: "POST",
+    body: JSON.stringify(config),
+  });
+}
