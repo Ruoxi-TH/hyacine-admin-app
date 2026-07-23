@@ -4,10 +4,10 @@ import { useAuthStore } from "@/store/auth";
 import { getStats } from "@/services/api";
 
 interface Stats {
-  totalUsers: number;
-  activeUsers: number;
-  bannedUsers: number;
-  adminUsers: number;
+  total_users: number;
+  active_users: number;
+  banned_users: number;
+  admin_users: number;
 }
 
 export default function DashboardScreen() {
@@ -48,10 +48,10 @@ export default function DashboardScreen() {
       </Text>
 
       <View style={{ marginTop: 24, flexDirection: "row", flexWrap: "wrap", gap: 12 }}>
-        <StatCard title="Total Users" value={stats?.totalUsers ?? 0} color="#7C3AED" />
-        <StatCard title="Active" value={stats?.activeUsers ?? 0} color="#22C55E" />
-        <StatCard title="Banned" value={stats?.bannedUsers ?? 0} color="#EF4444" />
-        <StatCard title="Admins" value={stats?.adminUsers ?? 0} color="#F97316" />
+        <StatCard title="Total Users" value={stats?.total_users ?? 0} color="#7C3AED" />
+        <StatCard title="Active" value={stats?.active_users ?? 0} color="#22C55E" />
+        <StatCard title="Banned" value={stats?.banned_users ?? 0} color="#EF4444" />
+        <StatCard title="Admins" value={stats?.admin_users ?? 0} color="#F97316" />
       </View>
 
       <View style={{ marginTop: 32 }}>
